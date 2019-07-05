@@ -1,0 +1,28 @@
+{
+  "name": "bsa-second-task-js",
+  "version": "1.0.0",
+  "description": "node express server using socket.io and passport.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Dariya Baletskaya",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "2.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^3.4.1",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.2.0"
+  }
+}

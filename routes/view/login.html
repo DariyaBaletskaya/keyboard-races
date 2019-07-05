@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/site-icon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+          crossorigin="anonymous">      
+          
+    <script  src="js/auth.js"></script>
+    <script  src="js/login.js"></script>
+    <title>Keyboard races</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Keyboard Races</h1>
+    <form action="/login" method="POST" id="form-login">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" id="login-btn" class="btn btn-dark">Login</button>
+    </div>
+</form>
+    
+</body>
+</html>
