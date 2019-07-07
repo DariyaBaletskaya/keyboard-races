@@ -8,11 +8,14 @@ Second task solution for Binary Studio Academy 2019 🎉
 [![image.png](https://i.postimg.cc/wB08XX6W/image.png)](https://postimg.cc/KKkHFg3L)
 
 2. Wait until you race starts;
+
+[![image.png](https://i.postimg.cc/hGxMggYV/image.png)](https://postimg.cc/p9WKJNRd)
+
 3. Type text, according to the given one in the rectangular,  in your text-area as quickly as you can;
 4. Try not to make typos
 5. Just enjoy the game 🎉
 
-[![image.png](https://i.postimg.cc/9XNX5hHx/image.png)](https://postimg.cc/Z0pzpXR3)
+[![image.png](https://i.postimg.cc/j2kyPk9s/image.png)](https://postimg.cc/hQTJqMcw)
 
 ## Implementation
 1. Node.js + Express for the server
