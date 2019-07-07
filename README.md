@@ -9,7 +9,7 @@ Second task solution for Binary Studio Academy 2019 🎉
 
 2. Wait until you race starts;
 
-[![image.png](https://i.postimg.cc/hGxMggYV/image.png)](https://postimg.cc/p9WKJNRd)
+[![image.png](https://i.postimg.cc/7PV9xqHy/image.png)](https://postimg.cc/NLKmDq2N)
 
 3. Type text, according to the given one in the rectangular,  in your text-area as quickly as you can;
 4. Try not to make typos
