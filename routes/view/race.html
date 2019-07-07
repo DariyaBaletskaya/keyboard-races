@@ -13,9 +13,8 @@
     
     <!--Socket.io-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-    
+    <!--Custom scripts-->
     <script src="/js/race.js"></script>
-    
     <title>Keyboard races</title>
 </head>
 <body>
@@ -24,34 +23,18 @@
     </header>
     <div class="container">
 
-        <div class="indicator-wrapper">
-            <span>Player 1</span>
-            <progress class="race-progress"  value="80" max="100">
-            </progress>
-        </div>
+        <div  id="indicator-placeholder"></div>
 
-        <div class="indicator-wrapper">
-            <span>Player 2</span>
-            <progress class="race-progress"  value="100" max="100">
-            </progress>
-        </div>
+        <div class="text-lable" id="game-info-placeholder"></div>
 
-        <h3 class="title race-title" >The next race starts in: <span>30s</span></h3>
+        <h3 class="title race-title" id="time-value-title"></h3>
 
-        <div class="race-text-wrapper">
-            <p id="race-text" >
-                
-            </p>
+        <div class="race-text-wrapper" id="race-text"></div>
 
-        </div>
         <div class="form-group race-textinput">
-                <label class="text-input-lable">Enter your text here</label>
+                <label class="text-lable">Enter your text here</label>
                 <textarea class="form-control" id="race-input" rows="7"></textarea>
         </div>
     </div>
-
-    
-
-
 </body>
 </html>

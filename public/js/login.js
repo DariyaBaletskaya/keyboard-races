@@ -1,9 +1,9 @@
 window.onload = () => {
-    const formLogin = document.getElementById('form-login');
+        const loginBtn = document.getElementById('login-btn');
         const usernameField = document.getElementById('username');
         const passwdField = document.getElementById('password');
 
-        formLogin.addEventListener('submit', ev => {
+        loginBtn.addEventListener('click', ev => {
             fetch('/login', {
                 method: 'POST',
                 headers: {
@@ -16,11 +16,18 @@ window.onload = () => {
                 })
             }).then(res => {
                 res.json().then(body => {
-                    console.log(body);
                     if (body.auth) {
                         localStorage.setItem('jwt', body.token);
                         location.replace('/race');
-                    } else {
+                        
+                        return fetch('/race', {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `JWT ${body.token}`
+                            }
+                        });
+                    }  else {
                         console.log('auth failed');
                     }
                 })
@@ -31,5 +38,3 @@ window.onload = () => {
 }
         
 
-    
-   

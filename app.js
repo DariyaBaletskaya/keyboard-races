@@ -9,10 +9,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
 const appRouter = require('./routes/routes');
-require('./middlewares/passport.config');
 const textes = require('./race-textes.json');
-
-server.listen(3000);
+require('./middlewares/passport.config');
 
 
 app.use('/', appRouter);
@@ -23,12 +21,57 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 
-io.on('connection', socket => {
-    const rand = Math.floor(Math.random() * 6 + 1);
-    const randomText = textes.find(text => text.id === rand);
+server.listen(3000);
 
-    socket.emit('race-start', {randomText});
- 
+let roomNumber = 1;
+
+io.sockets.on('connection', socket => {
+
+    //Increase room number when 2 clients are present in a room.
+    if(io.nsps['/'].adapter.rooms["room-"+roomNumber] && io.nsps['/'].adapter.rooms["room-"+roomNumber].length > 2) {
+      roomNumber++;
+    } 
+    
+    socket.on('auth', payload => {
+       socket.join("room-" + roomNumber);
+        const  token  = payload.token;
+        const username = jwt.decode(token).username;
+
+        const rand = Math.floor(Math.random() * 6 + 1);
+        const randomText = textes.find(text => text.id === rand);
+
+        socket.emit('game-start', {user: username, randomText});
+        io.in(`room-${roomNumber}`).emit('join-user', {user: username});
+
+        socket.on('game-win', () => {
+          console.log(`${username} won in the room ${roomNumber}`);
+          io.in(`room-${roomNumber}`).emit('show-winner', {user: username});
+        });
+
+        socket.on('disconnect', () => {
+          console.log(`${username} disconnected from room ${roomNumber}`);
+          io.in(`room-${roomNumber}`).emit('disconnect-user', {user: username});
+        });
+      
+      });
+
+      //set up countdown before the game 
+      let countdown = 10;
+      let timerId = setInterval(() => {
+        if(countdown) { 
+            countdown--;
+         } else {
+          clearInterval(timerId);
+        }
+        socket.emit('countdown', { countdown: countdown });
+      }, 1000);
+
+      //set up game timer
+      setInterval(()=>  {
+        socket.emit('game-timer');
+        }, 1000);
+
 });
+
 
 module.exports = app;

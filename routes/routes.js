@@ -21,25 +21,29 @@ router.get('/login', function(req, res) {
     res.sendFile(path.join(__dirname , '/view/login.html'));
   });
 
-router.post('/login', function(req, res){
+router.post('/login', function(req, res, next){
     const userFromReq = req.body;
     const userInDB = users.find(user => user.username === userFromReq.username);
-    if (userInDB && userInDB.password === userFromReq.password) {
-      const token = jwt.sign(userFromReq, 'someSecret', { expiresIn: '24h' });
+    if(userInDB && userInDB.password === userFromReq.password) {
+      const token = jwt.sign(userFromReq, 'someSecret');
       res.status(200).json({ auth: true, token });
     } else {
-      res.sendFile(path.join(__dirname , '/view/error.html'));
+      res.redirect('/error');
   }
 });
 
-router.get('/race', /*passport.authenticate('jwt')*/ function (req, res) {
-   debug(req.method + ' ' + req.url);
-   res.sendFile(path.join(__dirname, '/view/race.html'));
+router.get('/race', function (req, res) {
+  debug(req.method + ' ' + req.url);
+  res.sendFile(path.join(__dirname, '/view/race.html'));
 });
 
 router.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
+  res.redirect("/");
+});
+
+router.get('/error', function(req, res){
+  debug(req.method + ' ' + req.url);
+  res.sendFile(path.join(__dirname, '/view/error.html'));
 });
 
   module.exports = router;

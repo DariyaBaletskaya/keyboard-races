@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
 
-
-
 body {
     background-color: #F4D03F !important;
     font-family: 'Open Sans', sans-serif !important;
@@ -16,23 +14,28 @@ a {
 header {
     width: 100%;
     padding: 1rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .container {
-    height: 100vh;
     width: 30rem;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.center-container {
+    height: 100vh;
+}
 
 .title {
     margin-bottom: 2rem;
+
     font-family: 'Nanum Pen Script', cursive;
     font-size: 5.5rem;
 }
@@ -52,60 +55,57 @@ form {
     justify-content: center;
 }
 
+.indicator-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .indicator-wrapper {
     font-family: 'Nanum Pen Script', cursive;
     font-size: 2rem;
+
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    
   }
   
-  .race-progress {
-      display: block;
-      margin-left: 2rem;
-      background-color: #e62739;
-  }
-    
-  progress::-webkit-progress-bar {
-      background-color: #e62739;
-  }
-    
-  progress::-moz-progress-bar { 
-      background-color: #e62739;
-  }
-    
-  progress::-webkit-progress-value {
-      background-color: #e62739;
-  }
-    
-  .race-text-wrapper{
-      width: 70%;
-      margin: 1rem 0;
-      padding: 0.8rem;
-      min-height: 5rem;
-      max-height: 30rem;
-      overflow: auto;
-      text-align: justify;
+.race-progress {
+    display: block;
+    margin-left: 2rem;
+}
+
+.race-text-wrapper{
+    width: 70%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    min-height: 5rem;
+    max-height: 30rem;
+
+    overflow: auto;
+    text-align: justify;
       
-      background-color: #f2b5328e;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
+    background-color: #f2b5328e;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
-  .race-textinput {
-      width: 70%;
-      font-size: 1.5rem;
-      text-align: center;
-  }
+.race-textinput {
+    width: 70%;
+      
+    font-size: 1.5rem;
+    text-align: center;
+}
 
-  .text-input-lable {
+.text-lable {
     font-family: 'Nanum Pen Script', cursive;
-  }
+    font-size: 1.5rem;
+}
 
-  .logout-btn {
-      width: 5rem;
-  }
+.logout-btn {
+     width: 5rem;
+}
   
 
 
