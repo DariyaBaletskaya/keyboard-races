@@ -1,6 +1,6 @@
 # Keyboard Races
 Node.js Express server implementation using Socket.io and Passport.js + JWT.
-Second task solution for Binary Studio Academy 2019 🎉
+Task solution for [Binary Studio Academy 2019](https://academy.binary-studio.com) 🎉
 
 ## How To
 1. Login (user credentials can be found in file `user-credentials` in the root of a project);
@@ -18,8 +18,8 @@ Second task solution for Binary Studio Academy 2019 🎉
 [![image.png](https://i.postimg.cc/j2kyPk9s/image.png)](https://postimg.cc/hQTJqMcw)
 
 ## Implementation
-1. Node.js + Express for the server
-2. Passport.js + JWT for authentication
-3. Web Sockets implemented using Socket.io
-4. HTML/CSS + Bootstrap frontend
+1. **Node.js** + **Express** for the server
+2. **Passport.js** + **JWT** for authentication
+3. **Web Sockets** implemented using Socket.io
+4. **HTML/CSS + Bootstrap** frontend
 
